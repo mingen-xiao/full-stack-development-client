@@ -31,7 +31,7 @@ function Home() {
       //  asynchronously, wait for the request to be done
       //  run the 'then' function inside, data received should be stored over here
       axios
-        .get("http://localhost:3001/posts", {
+        .get("https://full-stack-development-mingen-e00e505197b4.herokuapp.com/posts", {
           headers: { accessToken: localStorage.getItem("accessToken") },
         })
         .then((response) => {
@@ -50,7 +50,7 @@ function Home() {
   const likeAPost = (postId) => {
     axios
       .post(
-        "http://localhost:3001/likes",
+        "https://full-stack-development-mingen-e00e505197b4.herokuapp.com/likes",
         { PostId: postId },
         // Parsing the "Token" as part of the "Header" to "Validate" in the back end
         { headers: { accessToken: localStorage.getItem("accessToken") } }

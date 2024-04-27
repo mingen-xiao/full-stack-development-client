@@ -11,7 +11,7 @@ function ChangePassword() {
     // Be able to take in both the "useState" and make the "axios" PUT request
     axios
       .put(
-        "http://localhost:3001/auth/changepassword",
+        "https://full-stack-development-mingen-e00e505197b4.herokuapp.com/auth/changepassword",
         {
           // Follow what's in STEP 6
           oldPassword: oldPassword,

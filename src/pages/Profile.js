@@ -12,12 +12,12 @@ function Profile() {
 
   //   "useEffect" will act whenever you access the page for the first time
   useEffect(() => {
-    axios.get(`http://localhost:3001/auth/basicinfo/${id}`).then((response) => {
+    axios.get(`https://full-stack-development-mingen-e00e505197b4.herokuapp.com/auth/basicinfo/${id}`).then((response) => {
       setUsername(response.data.username);
     });
 
     // "response": The "Array" containing all the "posts" we need
-    axios.get(`http://localhost:3001/posts/byuserId/${id}`).then((response) => {
+    axios.get(`https://full-stack-development-mingen-e00e505197b4.herokuapp.com/posts/byuserId/${id}`).then((response) => {
       setListOfPosts(response.data);
     });
   }, []);

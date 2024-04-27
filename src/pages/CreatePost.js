@@ -40,7 +40,7 @@ const CreatePost = () => {
   //   To get the data from the form automatically when clicked
   const onSubmit = (data) => {
     axios
-      .post("http://localhost:3001/posts", data, {
+      .post("https://full-stack-development-mingen-e00e505197b4.herokuapp.com/posts", data, {
         // Instead of sending the username from the frontend (cuz no more entering username when creating a post),
         // so in order to get the username, we are passing the "access token"
         // and validating the user who trying to create the post is exactly the user who is logged in now.

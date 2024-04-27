@@ -20,7 +20,7 @@ function Registration() {
   });
 
   const onSubmit = (data) => {
-    axios.post("http://localhost:3001/auth", data).then(() => {
+    axios.post("https://full-stack-development-mingen-e00e505197b4.herokuapp.com/auth", data).then(() => {
       console.log(data);
     });
   };

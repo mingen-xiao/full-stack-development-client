@@ -16,11 +16,11 @@ function Post() {
 
   // To fetch the data base on the ID
   useEffect(() => {
-    axios.get(`http://localhost:3001/posts/byId/${id}`).then((response) => {
+    axios.get(`https://full-stack-development-mingen-e00e505197b4.herokuapp.com/posts/byId/${id}`).then((response) => {
       setPostObject(response.data);
     });
 
-    axios.get(`http://localhost:3001/comments/${id}`).then((response) => {
+    axios.get(`https://full-stack-development-mingen-e00e505197b4.herokuapp.com/comments/${id}`).then((response) => {
       setComments(response.data);
     });
   }, []); // "[]": pass this dependency array so that it wont make the same API request every second
@@ -29,7 +29,7 @@ function Post() {
   const addComment = () => {
     axios
       .post(
-        "http://localhost:3001/comments",
+        "https://full-stack-development-mingen-e00e505197b4.herokuapp.com/comments",
         {
           commentBody: newComment,
           PostId: id,
@@ -58,7 +58,7 @@ function Post() {
   const deleteComment = (id) => {
     // "headers": passed by the "localStorage"
     axios
-      .delete(`http://localhost:3001/comments/${id}`, {
+      .delete(`https://full-stack-development-mingen-e00e505197b4.herokuapp.com/comments/${id}`, {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then(() => {
@@ -74,7 +74,7 @@ function Post() {
 
   const deletePost = (id) => {
     axios
-      .delete(`http://localhost:3001/posts/${id}`, {
+      .delete(`https://full-stack-development-mingen-e00e505197b4.herokuapp.com/posts/${id}`, {
         // Pass the "accessToken" as part of the "headers" in this request to update changes in the front-end
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
@@ -89,7 +89,7 @@ function Post() {
       // No matter what enterred when clicked title, stored in this
       let newTitle = prompt("Enter New Title: ");
       axios.put(
-        "http://localhost:3001/posts/title",
+        "https://full-stack-development-mingen-e00e505197b4.herokuapp.com/posts/title",
         {
           newTitle: newTitle,
           id: id,
@@ -105,7 +105,7 @@ function Post() {
       // No matter what enterred when clicked text, stored in this
       let newPostText = prompt("Enter New Text: ");
       axios.put(
-        "http://localhost:3001/posts/postText",
+        "https://full-stack-development-mingen-e00e505197b4.herokuapp.com/posts/postText",
         {
           newText: newPostText,
           id: id,

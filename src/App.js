@@ -34,7 +34,7 @@ function App() {
   // Set AUTH STATE to validate a real login & a fake login
   useEffect(() => {
     axios
-      .get("http://localhost:3001/auth/auth", {
+      .get("https://full-stack-development-mingen-e00e505197b4.herokuapp.com/auth/auth", {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then((response) => {

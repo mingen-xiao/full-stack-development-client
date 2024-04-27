@@ -12,7 +12,7 @@ function Login() {
 
   const login = () => {
     const data = { username: username, password: password };
-    axios.post("http://localhost:3001/auth/login", data).then((response) => {
+    axios.post("https://full-stack-development-mingen-e00e505197b4.herokuapp.com/auth/login", data).then((response) => {
       if (response.data.error) {
         // Make some validation middleware to the request and check if the user has a correct "jwt" stored in their local/session storage
         alert(response.data.error); // If theres error in the data, return "Alert"
